@@ -22,7 +22,8 @@
             && (branch.buildType.projectName != "iTROPICS" 
                 || [
                     "AWS Deploy QA",
-					"AWS Deploy Dev"
+					"AWS Deploy Dev",
+                    "Booking Engine Deploy Dev"
                 ].indexOf(branch.buildType.name) == -1) // Ignore iTropics QA and Dev deployment, as the environment is not ready.
             && (
                 !branch.name /* No branch name is there for builds with no VCS roots at all, or when 'Branch specification' is left empty (e.g. when not using feature branches at all)*/
