@@ -11,7 +11,7 @@
                     "aws-uat :: Deploy", 
                     "aws-uat :: Delete stack"
                 ].indexOf(branch.buildType.name) == -1) // Ignore TIP UAT, as the peering VPS infrastructure has not been set up
-            && (branch.buildType.projectName != "Single Sign On" 
+            && (branch.buildType.projectName != "Single Sign On :: Dev" 
                 || [
                     "Run BDD tests on develop branch"
                 ].indexOf(branch.buildType.name) == -1) // Ignore SSO E2E tests, as they are not reliable. Fix and unignore!
