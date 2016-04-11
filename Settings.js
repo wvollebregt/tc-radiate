@@ -9,7 +9,8 @@
                 || [
                     "aws-dev :: Create stack", 
                     "aws-dev :: Deploy", 
-                    "aws-dev :: Delete stack"
+                    "aws-dev :: Delete stack",
+                    "aws-dev :: Run E2E tests"
                 ].indexOf(branch.buildType.name) == -1)
             && (branch.buildType.projectName != "Single Sign On :: Dev" 
                 || [
