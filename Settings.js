@@ -5,12 +5,12 @@
     //Only show builds for branches that satisfy the predicate
     branchFilter: function(branch) {
         return (
-            (branch.buildType.projectName != "Tour Itinerary Portal" 
+            (branch.buildType.projectName != "Manage My Documents :: move-to-mysql" 
                 || [
-                    "aws-uat :: Create stack", 
-                    "aws-uat :: Deploy", 
-                    "aws-uat :: Delete stack"
-                ].indexOf(branch.buildType.name) == -1) // Ignore TIP UAT, as the peering VPS infrastructure has not been set up
+                    "aws-dev :: Create stack", 
+                    "aws-dev :: Deploy", 
+                    "aws-dev :: Delete stack"
+                ].indexOf(branch.buildType.name) == -1)
             && (branch.buildType.projectName != "Single Sign On :: Dev" 
                 || [
                     "Run BDD tests on develop branch"
