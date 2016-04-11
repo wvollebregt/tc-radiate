@@ -5,13 +5,7 @@
     //Only show builds for branches that satisfy the predicate
     branchFilter: function(branch) {
         return (
-            (branch.buildType.projectName != "Manage My Documents :: move-to-mysql" 
-                || [
-                    "aws-dev :: Create stack", 
-                    "aws-dev :: Deploy", 
-                    "aws-dev :: Delete stack",
-                    "aws-dev :: Run E2E tests"
-                ].indexOf(branch.buildType.name) == -1)
+            (branch.buildType.projectName != "Manage My Documents :: move-to-mysql")
             && (branch.buildType.projectName != "Single Sign On :: Dev" 
                 || [
                     "Run BDD tests on develop branch"
