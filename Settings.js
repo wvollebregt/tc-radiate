@@ -5,15 +5,15 @@
     //Only show builds for branches that satisfy the predicate
     branchFilter: function(branch) {
         return (
-            (branch.buildType.projectName != "Manage My Documents :: move-to-mysql")
-            && (branch.buildType.projectName != "Single Sign On :: Dev" 
+            (branch.buildType.projectName != "Single Sign On :: Dev" 
                 || [
                     "Run BDD tests on develop branch"
                 ].indexOf(branch.buildType.name) == -1) // Ignore SSO E2E tests, as they are not reliable. Fix and unignore!
-			&& (branch.buildType.projectName != "iTROPICS :: Nightly Integration Tests" 
-			|| [
-				"Nightly Integration Tests"
-			].indexOf(branch.buildType.name) == -1) // Ignore iTropics Nightly Integration tests until the AWS Deploy Dev environment is created properly
+            && (branch.buildType.projectName != "iTROPICS :: Nightly Integration Tests" 
+                || [
+		    "Nightly Integration Tests"
+		].indexOf(branch.buildType.name) == -1) // Ignore iTropics Nightly Integration tests until the AWS Deploy Dev environment is created properly
+            && (!branch.buildType.projectName.startsWith("Tour Itinerary Portal") || branch.name) // Non-VCS builds have been deprecated 
             && (branch.buildType.projectName != "iTROPICS" 
                 || [
                     "AWS Deploy QA",
