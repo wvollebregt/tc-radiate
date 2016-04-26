@@ -10,12 +10,6 @@
                     "Run BDD tests on develop branch"
                 ].indexOf(branch.buildType.name) == -1) // Ignore SSO E2E tests, as they are not reliable. Fix and unignore!
             && (!branch.buildType.projectName.startsWith("Tour Itinerary Portal") || branch.name) // Non-VCS builds have been deprecated 
-            && (branch.buildType.projectName != "iTROPICS" 
-                || [
-                    "AWS Deploy QA",
-					"AWS Deploy Dev",
-                    "Booking Engine Deploy Dev"
-                ].indexOf(branch.buildType.name) == -1) // Ignore iTropics QA and Dev deployment, as the environment is not ready.
             && (branch.buildType.projectName != "AWS Tools") // Ignore AWS Tools, due to unstable tests
             && (
                 !branch.name /* No branch name is there for builds with no VCS roots at all, or when 'Branch specification' is left empty (e.g. when not using feature branches at all)*/
