@@ -17,6 +17,8 @@
                     "Booking Engine Deploy Dev"
                 ].indexOf(branch.buildType.name) == -1) // Ignore iTropics QA and Dev deployment, as the environment is not ready.
             && (!(branch.buildType.projectName.startsWith("iTROPICS") && branch.buildType.name.indexOf("Run Acceptance Tests") > -1) || branch.name) // Non-VCS builds have been deprecated 
+            && (!branch.buildType.projectName != "iTROPICS :: MMBAir" 
+                || branch.buildType.name.indexOf("Run Acceptance Tests") == -1) // Ignore MMBAir E2E tests, as not set up yet
             && (branch.buildType.projectName != "AWS Tools") // Ignore AWS Tools, due to unstable tests
             && (
                 !branch.name /* No branch name is there for builds with no VCS roots at all, or when 'Branch specification' is left empty (e.g. when not using feature branches at all)*/
